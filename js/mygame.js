@@ -15,5 +15,7 @@ function Player(nombre, edad){
 var hombre = new Player("Andres", 20);
 var mujer = new Player("Amanda", 80);
 
+console.log(hombre.sumaredad(hombre))
+
 
 
