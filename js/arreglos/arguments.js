@@ -18,4 +18,4 @@ function Test(a, b){
 }
 
 // Se pasan los argumentos o valores de la funcion
-Test(4);
+Test(4, '789');
