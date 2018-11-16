@@ -11,14 +11,35 @@
             body{
                 background: #000;
                 color: #fff;
+                width: 100%;
+                height: 100%;
+                position: absolute;left: 0;top: 0;padding: 0;margin: 0;
             }
         </style>
+        <!-- Como javascript se ejecuta de manera asincrona se recomienda dejarlo al inicio si se usa unA FUNCION despues-->
+        
     </head>
-    <body>
 
-        <div id="context"></div>
+    <!-- Para bloquear el clic derecho agregamos como atributo al body lo siguiente:-->
+    <body oncontextmenu="return false">
 
-        <script type="text/javascript" src="js/ciclos/for.js"></script>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+
+        <div id="context">
+            <h4>Boton con evento desde HTML</h4>
+            <button onclick="onDom()">Boton test</button>
+
+            <hr>
+            <h4>Boton con evento desde Javascript</h4>
+            <button id="fromJa">Boton</button>   
+            <input type="text" placeholder="presionar..." id="input"/>         
+        </div>
+
+        <div id="result"></div>
+
+        <script type="text/javascript" src="js/eventos/introduccion.js"></script>
         
     </body>
 </html>
