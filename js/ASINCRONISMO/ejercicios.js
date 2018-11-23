@@ -110,3 +110,51 @@ promesa.then(
        // Manejar el error
     }
 );
+
+// Ejecutar PROMESA CON DIFERIDO
+
+function quieroPostre (imagenesDeVerdura) {
+  
+    // Se crea el valor a futuro con Q.Defer
+	var defer = Q.defer();
+  
+    var url = obtenerUrl(imagenesDeVerdura);
+  
+  	$.ajax(url,{
+
+        // Se llama la data del metodo
+        data: imagenesDeVerdura,
+
+      	success: function(data, textStatus, jqXHR){
+            // Se le asigna al defer un valor resolve si esta OK
+        	defer.resolve(data);
+        },
+
+      	error: function(jqXHR, textStatus, errorThrown){
+            // Se le lanza reject si el valor es rechazado
+        	defer.reject(errorThrown); 
+        }
+
+    });
+  
+  	return defer.promise;
+}
+
+// Promesa a lo guaso
+try{
+	var promesa = quieroPostre(imagenesDeVerdura);
+  	promesa.then(
+		function(data){
+        	console.log('Wii', data);
+        },
+      	function(err){
+        	console.log('Buu', err);
+        }
+	);
+}
+
+catch(err){
+	console.log('Buu', err)
+}
+
+// Ejercicio 3
